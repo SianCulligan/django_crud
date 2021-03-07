@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+    <h1>Update Snacks</h1>
+    <div class="form-box">
+    <form action="" method="POST">
+        {% comment %} V THIS LINE IS VERY IMPORTANT, CLOSES THE DOOR ON SPECIFIC THREATS {% endcomment %}
+        {% csrf_token %}
+        {% comment %} RENDERS THE FORM AS A PARAGRAPH {% endcomment %}
+        {{ form.as_p }}
+        <input type="submit" value="SAVE">
+    </form>
+    </div>
+
+{% endblock contents %}

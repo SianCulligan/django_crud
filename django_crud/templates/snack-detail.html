@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block contents%}
+    {% comment %} <h1> BRING ON THE SNACK...details </h1> 
+    <img src="https://www.memesmonkey.com/images/memesmonkey/16/16fc59d3a1a91675049c37d8aab01081.jpeg" width=250px hieght=auto>
+{% endcomment %}
+    <h1> Get some {{ snack.name}}</h1>
+    <p>Purchaser: {{ snack.owner }}</p>
+    <p>Description: {{ snack.description }}</p> 
+    <br><br>    
+
+    <nav>
+    <a href="{% url 'snack_update' snack.pk%}">+ Update Snack</a>
+    <a href="{% url 'snack_delete' snack.pk%}">+ Delete Snack</a>
+    </nav>
+{% endblock contents%}
